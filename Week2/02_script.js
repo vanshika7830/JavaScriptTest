@@ -16,7 +16,6 @@ async function fetchGitHubUser(username) {
       errorMsg.innerText = "❌ User not found (404)";
       return;
     }
-
     const userData = await userRes.json();
 
     // Show profile card
