@@ -8,10 +8,6 @@ app.use(express.json());
 let tasks = [];
 let currentId = 1;
 
-/*
-1️⃣ GET /tasks
-Supports filter ?completed=true/false
-*/
 app.get("/tasks", (req, res) => {
   const { completed } = req.query;
 
@@ -26,9 +22,6 @@ app.get("/tasks", (req, res) => {
   res.json(tasks);
 });
 
-/*
-2️⃣ GET /tasks/:id
-*/
 app.get("/tasks/:id", (req, res) => {
   const id = parseInt(req.params.id);
 
@@ -41,9 +34,6 @@ app.get("/tasks/:id", (req, res) => {
   res.json(task);
 });
 
-/*
-3️⃣ POST /tasks
-*/
 app.post("/tasks", (req, res) => {
   const { title } = req.body;
 
@@ -62,9 +52,6 @@ app.post("/tasks", (req, res) => {
   res.status(201).json(newTask);
 });
 
-/*
-4️⃣ PUT /tasks/:id
-*/
 app.put("/tasks/:id", (req, res) => {
   const id = parseInt(req.params.id);
 
@@ -82,9 +69,6 @@ app.put("/tasks/:id", (req, res) => {
   res.json(task);
 });
 
-/*
-5️⃣ DELETE /tasks/:id
-*/
 app.delete("/tasks/:id", (req, res) => {
   const id = parseInt(req.params.id);
 
